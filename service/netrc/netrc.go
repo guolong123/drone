@@ -71,10 +71,10 @@ func (s *Service) Create(ctx context.Context, user *core.User, repo *core.Reposi
 
 	// force refresh the authorization token to prevent
 	// it from expiring during pipeline execution.
-	err = s.renewer.Renew(ctx, user, true)
-	if err != nil {
-		return nil, err
-	}
+	// err = s.renewer.Renew(ctx, user, true)
+	// if err != nil {
+	// 	return nil, err
+	// }
 
 	switch s.client.Driver {
 	case scm.DriverGitlab, scm.DriverGitee:
